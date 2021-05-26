@@ -187,13 +187,14 @@ object OpenOfflineManager : MapMethodHandler {
     override fun with(map: AMap): MapMethodHandler {
         return this
     }
-
-    override fun onMethodCall(p0: MethodCall?, p1: MethodChannel.Result?) {
+ override fun onMethodCall(methodCall: MethodCall, methodResult: MethodChannel.Result){
+    }
+    /*override fun onMethodCall(p0: MethodCall?, p1: MethodChannel.Result?) {
         AMapBasePlugin.registrar.activity().startActivity(
                 Intent(AMapBasePlugin.registrar.activity(),
                         OfflineMapActivity::class.java)
         )
-    }
+    }*/
 }
 
 object SetLanguage : MapMethodHandler {
