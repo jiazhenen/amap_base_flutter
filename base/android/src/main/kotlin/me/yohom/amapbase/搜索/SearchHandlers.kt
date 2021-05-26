@@ -284,10 +284,10 @@ object CalculateDriveRoute : SearchMethodHandler {
 }
 
 object DistanceSearchHandler : SearchMethodHandler {
-    override fun onMethodCall(call: MethodCall, result: MethodChannel.Result?) {
-        val search = DistanceSearch(AMapBasePlugin.registrar.context())
-        search.setDistanceSearchListener { distanceResult, i ->
-            search.setDistanceSearchListener(null)
+    override fun onMethodCall(call: MethodCall, result: MethodChannel.Result) {
+       /* val search = DistanceSearch(AMapBasePlugin.registrar.context())
+        search.setDistanceSearchListener { 
+       distanceResult, i -> search.setDistanceSearchListener(null)
             if (i == 1000) {
                 val list = distanceResult.distanceResults.map {
                     it.distance.toInt()
@@ -308,7 +308,7 @@ object DistanceSearchHandler : SearchMethodHandler {
             }.toMutableList()
             this.destination = target.toLatlng().toLatLonPoint()
             this.type = type
-        })
+        })*/
     }
 
     fun Map<String, Any>.toLatlng(): LatLng {
